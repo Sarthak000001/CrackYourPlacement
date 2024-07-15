@@ -4,7 +4,8 @@ The problem is an easy level in problem we have given an array A of packets with
 2. The difference between maximum number of chocolates given to a student and minimum number of chocolates given to a student is minimum.
 
 Code:
-```class Solution{
+```
+class Solution{
     public:
     long long findMinDiff(vector<long long> a, long long n, long long m){
         // simply sort the array and iterate it in 'M' sized subarray and 
@@ -14,7 +15,7 @@ Code:
         long long ans = INT_MAX;
         long long low = 0;
         long long high = m-1;
-        for(int i=m;i <= n;i++){
+        while(high < n){
             ans = min(a[high]-a[low],ans);
             high++;
             low++;
