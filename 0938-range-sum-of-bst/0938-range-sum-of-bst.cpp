@@ -10,17 +10,16 @@
  * };
  */
 class Solution {
-    int ans = 0;
-    void solve(TreeNode* node,int low,int high){
-        if(node == NULL) return;
+    int solve(TreeNode* node,int low,int high){
+        if(node == NULL) return 0;
         
-        if(node->val >= low && node->val <= high) ans += node->val;
-        solve(node->left,low,high);
-        solve(node->right,low,high);
+        int left = solve(node->left,low,high);
+        int right = solve(node->right,low,high); 
+        
+        return ((node->val < low || node->val > high) ?0 : node->val) + left + right;
     }
 public:
     int rangeSumBST(TreeNode* root, int low, int high) {
-        solve(root,low,high);
-        return ans;
+        return solve(root,low,high);
     }
 };
