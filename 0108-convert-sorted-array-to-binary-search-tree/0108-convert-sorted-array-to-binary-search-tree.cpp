@@ -13,7 +13,7 @@ class Solution {
     TreeNode* solve(TreeNode* node,vector<int>&nums,int low,int high){
         if(low > high) return NULL;
         
-        int mid = (low + high)/2;
+        int mid = low + (high-low)/2;
         node = new TreeNode(nums[mid]);
         
         node->left = solve(node->left,nums,low,mid-1);
@@ -26,6 +26,6 @@ public:
         TreeNode* node = NULL;
        if(nums.size() == 0) return NULL;
         
-        return solve(node,nums,0,nums.size()-1);
+        return solve(NULL,nums,0,nums.size()-1);
     }
 };
