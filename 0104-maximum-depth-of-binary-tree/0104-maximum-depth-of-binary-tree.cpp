@@ -10,6 +10,10 @@
  * };
  */
 class Solution {
+    // Note : 
+    //     The depth of a node is the number of edges from the root to the node.
+    //     The height of a node is the number of edges from the node to the deepest leaf. 
+    //     The height of a tree is a height of the root
 public:
     int maxDepth(TreeNode* root) {
         if(!root) return 0;
