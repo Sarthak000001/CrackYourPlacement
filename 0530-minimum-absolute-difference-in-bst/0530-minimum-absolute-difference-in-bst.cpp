@@ -23,6 +23,8 @@ class Solution {
     }
 public:
     int getMinimumDifference(TreeNode* root) {
+        // Element's With Min. Diff. Would Be Next To Each Other,hence used
+        // inorder traversal 
         TreeNode* node = NULL;
         solve(root,node);
         return ans;
