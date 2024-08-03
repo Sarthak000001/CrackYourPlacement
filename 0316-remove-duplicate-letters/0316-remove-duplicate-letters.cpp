@@ -14,6 +14,7 @@ public:
         //adding in result if current greater than result.back() and it's not taken 
         // otherwise check if current less than result.back() check current present in 
         // future if yes then remove from result else add
+        // time complexity - O(n)
         for(int i=0;i < n;i++){
             char ch = s[i];
             if(taken[ch-'a'] == true) continue;
